@@ -1,4 +1,4 @@
 retry
 =====
 
-simple retry sample project
+simple spring-retry sample project
