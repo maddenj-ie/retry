@@ -4,12 +4,14 @@ import org.aopalliance.intercept.MethodInterceptor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
 import org.springframework.retry.annotation.EnableRetry;
 import org.springframework.retry.interceptor.RetryInterceptorBuilder;
 
 @Configuration
 @ComponentScan("ie.madman.retry")
 @EnableRetry(proxyTargetClass = true)
+@Profile("cglib")
 public class CglibProxyRetryConfig {
     @Bean
     public MethodInterceptor retryInterceptor() {
